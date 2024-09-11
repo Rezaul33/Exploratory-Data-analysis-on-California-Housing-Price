@@ -70,5 +70,34 @@
         - Joblib: Saves the trained Random Forest model to a file in the "../Model" directory using joblib.
 
 
-        
-    
+7. Build Streamlit App
+    - Imports:
+
+        - [Streamlit](https://docs.streamlit.io/) for the app interface
+        - [Joblib](https://joblib.readthedocs.io/en/stable/) for loading the model
+        - pandas for data manipulation
+    - Model Loading:
+
+        - Load the Random Forest model from model/random_forest_model.pkl
+    - Category Mapping:
+
+        - Define a dictionary to map ocean_proximity categories to numerical values
+    - Caching:
+
+        - Use @st.cache decorator for the predict_price function to cache results and improve performance
+    - Streamlit Interface:
+
+    - Set up the title and header of the app
+        - Create sliders and a select box in the sidebar for user input
+    - Data Preparation:
+
+        - Collect user inputs and prepare a DataFrame with these inputs
+        - Convert ocean_proximity to its numerical category using the defined mapping
+    - Feature Handling:
+
+        - Ensure the features DataFrame includes all expected columns, adding any missing columns with default values
+        - Reorder the columns to match the training data's column order
+    - Prediction:
+
+        - Call the predict_price function with the prepared features
+        - Display the predicted housing price on the app
