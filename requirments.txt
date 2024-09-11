@@ -29,6 +29,7 @@ attrs @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/attrs_1699
 Automat @ file:///tmp/build/80754af9/automat_1600298431173/work
 autopep8 @ file:///croot/autopep8_1708962882016/work
 Babel @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/babel_1699475785740/work
+backcall==0.2.0
 bcrypt @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/bcrypt_1699483842258/work
 beautifulsoup4 @ file:///C:/b/abs_d5wytg_p0w/croot/beautifulsoup4-split_1718029833749/work
 binaryornot @ file:///tmp/build/80754af9/binaryornot_1617751525010/work
@@ -78,6 +79,7 @@ diff-match-patch @ file:///Users/ktietz/demo/mc3/conda-bld/diff-match-patch_1630
 dill @ file:///C:/b/abs_f79eg27d2q/croot/dill_1715094735295/work
 distributed @ file:///C:/b/abs_27jqurd3gk/croot/distributed_1715844512065/work
 distro @ file:///C:/b/abs_71xr36ua5r/croot/distro_1714488282676/work
+docopt==0.6.2
 docstring-to-markdown @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/docstring-to-markdown_1699484265167/work
 docutils @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/docutils_1699474820579/work
 entrypoints @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/entrypoints_1699484295227/work
@@ -118,7 +120,7 @@ iniconfig @ file:///home/linux1/recipes/ci/iniconfig_1610983019677/work
 intake @ file:///C:/b/abs_15sg46u7x7/croot/intake_1717513827138/work
 intervaltree @ file:///Users/ktietz/demo/mc3/conda-bld/intervaltree_1630511889664/work
 ipykernel==6.29.5
-ipython==8.27.0
+ipython==8.12.3
 ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
 ipywidgets @ file:///C:/b/abs_4fgmepzmbu/croot/ipywidgets_1710961556913/work
 isort @ file:///C:/b/abs_50iy840e4z/croot/isort_1718291849200/work
@@ -188,7 +190,7 @@ mypy-extensions @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/
 namex==0.0.8
 navigator-updater @ file:///C:/b/abs_22_3uaq2ey/croot/navigator-updater_1718030405023/work
 nbclient @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/nbclient_1701796752236/work
-nbconvert @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/nbconvert_1701806279884/work
+nbconvert==7.16.4
 nbformat @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/nbformat_1701796704118/work
 nest-asyncio==1.6.0
 networkx @ file:///C:/b/abs_3bxnu56g9d/croot/networkx_1717597507456/work
@@ -218,6 +220,7 @@ pexpect @ file:///tmp/build/80754af9/pexpect_1605563209008/work
 phik==0.12.4
 pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
 pillow @ file:///C:/b/abs_95ls_qh4c2/croot/pillow_1714398870615/work
+pipreqs==0.5.0
 pkce @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/pkce_1699482718905/work
 pkginfo @ file:///C:/b/abs_bciypal17m/croot/pkginfo_1715696027839/work
 platformdirs==4.3.2
@@ -381,6 +384,7 @@ xarray @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/xarray_16
 xlwings @ file:///C:/b/abs_6bsaqa795f/croot/xlwings_1718046948745/work
 xyzservices @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/xyzservices_1699548906163/work
 yapf @ file:///C:/b/abs_8aidayep18/croot/yapf_1708964372649/work
+yarg==0.1.9
 yarl @ file:///C:/b/abs_8bxwdyhjvp/croot/yarl_1701105248152/work
 ydata-profiling==4.10.0
 zict @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/zict_1699548979005/work
