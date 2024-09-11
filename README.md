@@ -65,28 +65,10 @@
         - Calculating and printing the Mean Squared Error (MSE) to assess the model's performance on the test set.
         - Calculating Root Mean Squared Error (RMSE): Using np.sqrt() to compute the square root of the Mean Squared Error (MSE) to provide an error metric in the same units as the target variable. This helps to interpret the magnitude of prediction errors.
         - Calculating R-squared (R2) score: Using r2_score() to measure the proportion of variance in the target variable that is predictable from the features. This indicates the goodness-of-fit of the model.
+    - Model Saving:
 
-7. Evaluating the performance of linear regression models for various subsets of features to identify the best feature set based on different performance metrics.
-    - Loading the dataset: Using pd.read_csv() to load the encoded dataset that has been preprocessed.
+        - Joblib: Saves the trained Random Forest model to a file in the "../Model" directory using joblib.
 
-    - Defining features and target variable: Separating the features (X) and target variable (y) for model training.
 
-    - Imputing missing values: Applying SimpleImputer with the 'mean' strategy to fill any missing values in the features.
-
-    - Standardizing features: Using StandardScaler to normalize the features, ensuring each has a mean of 0 and a standard deviation of 1.
-
-    - Splitting the data: Using train_test_split() to divide the data into training and testing sets.
-
-    - Performing regression tests:
-
-        - Feature Subset Selection: For each combination of features, subsets of features are selected based on combinations of columns.
-        - Training and Testing: Splitting the feature subsets into training and testing sets, training a LinearRegression model, and making predictions.
-        - Metrics Calculation: Evaluating the model using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R2) to assess the performance.
-
-    - Testing all possible feature combinations: Using combinations() from the itertools library to generate all possible combinations of features and evaluating each combination's performance.
-
-    - Storing and displaying results: Collecting results in a DataFrame and printing them to review the performance metrics for all feature combinations.
-        
-    - Saving results to an Excel file: Using results_df.to_excel() to export the DataFrame containing the regression test results to an Excel file. This allows for easy sharing and further analysis of the results.
         
     
