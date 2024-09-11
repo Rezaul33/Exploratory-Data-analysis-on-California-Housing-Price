@@ -1,8 +1,5 @@
 # ABP-E2E-PROJECT
 
-
-### Requirments
-
 1. Tools
     - [Anaconda](https://www.anaconda.com/)
     - [VS Code](https://code.visualstudio.com/)
@@ -22,8 +19,11 @@
 3. Data Collection and Loading
     - Downloaded [California housing price dataset](https://www.kaggle.com/datasets/camnugent/california-housing-prices) from [Kaggle](https://www.kaggle.com/)
     - Load the dataset into [Pandas](https://pandas.pydata.org/docs/index.html) Dataframe
+4. [Ydata Profile](https://docs.profiling.ydata.ai/latest/) generation
+    - Generating a Data Profiling Report: Using ProfileReport from ydata_profiling (formerly pandas_profiling) to create a comprehensive report of the dataset. This report includes various statistics, distributions, correlations, and potential issues within the data.
+    - Saving the Profiling Report: Using profile.to_file() to save the generated profiling report as an HTML file. This allows for a detailed and interactive exploration of the dataset.
 
-4. Data cleaning & pre-Processing
+5. Data cleaning & pre-Processing
     - Inspecting the first few rows: Displaying the first few rows of the dataset using df.head() to check its structure.
     - Inspecting dataset information: Using df.info() to check the data types and identify null values in the dataset.
     - Generating summary statistics: Using df.describe() to view statistical measures (mean, min, max, etc.) for numerical columns, helping to understand the dataset's distribution.
@@ -54,39 +54,39 @@
         - Reordering columns: Moving the target variable, median_house_value, to the rightmost position in the dataset to separate it from the feature columns.
         - Visualizing the filtered correlation matrix: Creating a heatmap using Seaborn to visualize the correlations between the remaining variables after dropping highly correlated columns.
     
-    5. Primary Model Training and performance Evaluation
-        - Defining features and target variable: Separating the dataset into features (X) and the target variable (y), with median_house_value as the target.
-        - Splitting the data: Using train_test_split() to divide the data into training and testing sets (80% train, 20% test) for model evaluation.
-        - Imputing missing values: Applying SimpleImputer with the 'mean' strategy to fill in any missing values in the features.
-        - Standardizing features: Using StandardScaler to normalize the feature values, ensuring that each feature has a mean of 0 and a standard deviation of 1, which improves model performance.
-        - Training a Linear Regression model: Fitting a LinearRegression model to the scaled training data.
-        - Making predictions: Generating predictions on the test set using the trained linear regression model.
-        - Evaluating the model: 
-            - Calculating and printing the Mean Squared Error (MSE) to assess the model's performance on the test set.
-            - Calculating Root Mean Squared Error (RMSE): Using np.sqrt() to compute the square root of the Mean Squared Error (MSE) to provide an error metric in the same units as the target variable. This helps to interpret the magnitude of prediction errors.
-            - Calculating R-squared (R2) score: Using r2_score() to measure the proportion of variance in the target variable that is predictable from the features. This indicates the goodness-of-fit of the model.
+6. Primary Model Training and performance Evaluation
+    - Defining features and target variable: Separating the dataset into features (X) and the target variable (y), with median_house_value as the target.
+    - Splitting the data: Using train_test_split() to divide the data into training and testing sets (80% train, 20% test) for model evaluation.
+    - Imputing missing values: Applying SimpleImputer with the 'mean' strategy to fill in any missing values in the features.
+    - Standardizing features: Using StandardScaler to normalize the feature values, ensuring that each feature has a mean of 0 and a standard deviation of 1, which improves model performance.
+    - Training a Linear Regression model: Fitting a LinearRegression model to the scaled training data.
+    - Making predictions: Generating predictions on the test set using the trained linear regression model.
+    - Evaluating the model: 
+        - Calculating and printing the Mean Squared Error (MSE) to assess the model's performance on the test set.
+        - Calculating Root Mean Squared Error (RMSE): Using np.sqrt() to compute the square root of the Mean Squared Error (MSE) to provide an error metric in the same units as the target variable. This helps to interpret the magnitude of prediction errors.
+        - Calculating R-squared (R2) score: Using r2_score() to measure the proportion of variance in the target variable that is predictable from the features. This indicates the goodness-of-fit of the model.
 
-    6. Evaluating the performance of linear regression models for various subsets of features to identify the best feature set based on different performance metrics.
-        - Loading the dataset: Using pd.read_csv() to load the encoded dataset that has been preprocessed.
+7. Evaluating the performance of linear regression models for various subsets of features to identify the best feature set based on different performance metrics.
+    - Loading the dataset: Using pd.read_csv() to load the encoded dataset that has been preprocessed.
 
-        - Defining features and target variable: Separating the features (X) and target variable (y) for model training.
+    - Defining features and target variable: Separating the features (X) and target variable (y) for model training.
 
-        - Imputing missing values: Applying SimpleImputer with the 'mean' strategy to fill any missing values in the features.
+    - Imputing missing values: Applying SimpleImputer with the 'mean' strategy to fill any missing values in the features.
 
-        - Standardizing features: Using StandardScaler to normalize the features, ensuring each has a mean of 0 and a standard deviation of 1.
+    - Standardizing features: Using StandardScaler to normalize the features, ensuring each has a mean of 0 and a standard deviation of 1.
 
-        - Splitting the data: Using train_test_split() to divide the data into training and testing sets.
+    - Splitting the data: Using train_test_split() to divide the data into training and testing sets.
 
-        - Performing regression tests:
+    - Performing regression tests:
 
-            - Feature Subset Selection: For each combination of features, subsets of features are selected based on combinations of columns.
-            - Training and Testing: Splitting the feature subsets into training and testing sets, training a LinearRegression model, and making predictions.
-            - Metrics Calculation: Evaluating the model using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R2) to assess the performance.
+        - Feature Subset Selection: For each combination of features, subsets of features are selected based on combinations of columns.
+        - Training and Testing: Splitting the feature subsets into training and testing sets, training a LinearRegression model, and making predictions.
+        - Metrics Calculation: Evaluating the model using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R2) to assess the performance.
 
-        - Testing all possible feature combinations: Using combinations() from the itertools library to generate all possible combinations of features and evaluating each combination's performance.
+    - Testing all possible feature combinations: Using combinations() from the itertools library to generate all possible combinations of features and evaluating each combination's performance.
 
-        - Storing and displaying results: Collecting results in a DataFrame and printing them to review the performance metrics for all feature combinations.
+    - Storing and displaying results: Collecting results in a DataFrame and printing them to review the performance metrics for all feature combinations.
         
-        - Saving results to an Excel file: Using results_df.to_excel() to export the DataFrame containing the regression test results to an Excel file. This allows for easy sharing and further analysis of the results.
+    - Saving results to an Excel file: Using results_df.to_excel() to export the DataFrame containing the regression test results to an Excel file. This allows for easy sharing and further analysis of the results.
         
     
