@@ -67,7 +67,7 @@
         - Calculating R-squared (R2) score: Using r2_score() to measure the proportion of variance in the target variable that is predictable from the features. This indicates the goodness-of-fit of the model.
     - Model Saving:
 
-        - Joblib: Saves the trained Random Forest model to a file in the "../Model" directory using joblib.
+        - Joblib: Saved the trained Random Forest model to a file in the "../Model" directory using joblib.
 
 
 7. Build Streamlit App

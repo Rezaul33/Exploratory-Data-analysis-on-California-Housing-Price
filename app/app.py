@@ -1,9 +1,17 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import os
 
-# Load the model
-model = joblib.load('model/random_forest_model.pkl')
+# Create the correct file path
+model_path = os.path.join('model', 'random_forest_model.pkl')
+
+# Check if model file exists (for debugging)
+if not os.path.exists(model_path):
+    st.error(f"Model file not found at {model_path}")
+else:
+    # Load the model
+    model = joblib.load(model_path)
 
 # Define category mapping for ocean_proximity
 category_mapping = {
