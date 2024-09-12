@@ -7,11 +7,17 @@ WORKDIR /app
 # Copy the application code to the container
 COPY . /app
 
+# Initialize Streamlit config (optional but recommended)
+RUN mkdir -p ~/.streamlit
+
+# Copy the custom Streamlit configuration into the container
+COPY .streamlit/config.toml ~/.streamlit/config.toml
+
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port that the application will run on
-EXPOSE 8502
+# Expose the default port Streamlit runs on (8501)
+EXPOSE 8501
 
 # Define the command to run the application
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8502", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app.py"]
