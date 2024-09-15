@@ -1,11 +1,16 @@
-# ABP-E2E-PROJECT
+
+## End-to-End California Housing Price Prediction App
+
+
 
 1. Tools
     - [Anaconda](https://www.anaconda.com/)
     - [VS Code](https://code.visualstudio.com/)
         - Python Extension Pack
         - Jupyter Notebook
-        - Data Wrangler 
+        - Data Wrangler
+        - Git
+        - Docker
 
     
 
@@ -75,7 +80,7 @@
 
         - [Streamlit](https://docs.streamlit.io/) for the app interface
         - [Joblib](https://joblib.readthedocs.io/en/stable/) for loading the model
-        - pandas for data manipulation
+        - Pandas for data manipulation
     - Model Loading:
 
         - Load the Random Forest model from model/random_forest_model.pkl
