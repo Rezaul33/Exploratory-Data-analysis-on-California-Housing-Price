@@ -106,3 +106,70 @@
 
         - Call the predict_price function with the prepared features
         - Display the predicted housing price on the app
+
+8. Streamlit APP design
+
+    - Model Loading: The code attempts to load a pre-trained Random Forest model from a .pkl file located in the 'model/' directory. If the model file is missing, an error message is displayed.
+
+    - Ocean Proximity Encoding: A dictionary (category_mapping) is used to map categorical values of ocean_proximity to numerical values for model input.
+
+        - Caching: The predict_price function is cached using @st.cache_data to improve performance by avoiding redundant model predictions.
+
+    - UI Design:
+
+        - The app has a title and a header explaining its purpose.
+        - The sync_slider_and_input function syncs the slider and number input widgets for each feature to keep them consistent.
+        - The sidebar contains inputs for various features, including sliders for numerical inputs (longitude, latitude, etc.) and a selectbox for ocean_proximity.
+    - Input Data Preparation:
+
+        - Input data is collected in a dictionary and converted to a pandas DataFrame.
+        - Default values for missing columns (feature_10, feature_11, feature_12, etc.) are added to ensure the feature set matches the model’s training data.
+    - Prediction:
+
+        - The DataFrame is passed to the predict_price function, which uses the preloaded model to predict housing prices.
+        - The predicted price is displayed with proper formatting.
+    - Streamlining UI: Two-way sync between number input and slider improves user experience, ensuring consistency for user inputs.
+
+
+9. Dockerfile for preparing a Streamlit application: 
+    - Base Image:
+        - FROM python:3.12-slim: The Dockerfile starts by pulling a lightweight version of Python 3.12 (slim variant) from Docker Hub, providing the environment to run the Python application.
+
+        - Set Working Directory:
+
+        - WORKDIR /app: This command sets the working directory inside the Docker container to /app, where all further operations (file copying, code execution) will occur.
+
+    - Copy Application Code:
+
+        - COPY . /app: All the application code from the current directory on the host machine is copied into the /app directory inside the Docker container.
+
+    - Streamlit Configuration Directory:
+
+        - RUN mkdir -p ~/.streamlit: A directory for Streamlit configuration is created inside the container (~/.streamlit).
+
+    - Copy Streamlit Configuration:
+
+        - COPY .streamlit/config.toml ~/.streamlit/config.toml: The custom Streamlit configuration (config.toml) from the local .streamlit/ directory is copied to the Streamlit configuration path inside the container.
+
+    - Install Dependencies:
+
+        - RUN pip install --no-cache-dir -r requirements.txt: This installs the required Python packages from requirements.txt without caching, optimizing the size of the image.
+
+    - Expose Streamlit Port:
+
+        - EXPOSE 8501: This exposes port 8501, which is the default port Streamlit uses, allowing access to the app from outside the container.
+
+    - Run Streamlit Application:
+
+        - CMD ["streamlit", "run", "app.py"]: This defines the command to execute when the container starts, running the Streamlit app (app.py).
+
+    
+
+
+### Notes
+
+- The Docker image of the app can be downloader from [here...](https://hub.docker.com/repository/docker/rezaul223/housing-price-prediction-app/general)
+
+- All the codes, files, documentation, dataset trained model and base code for the app is uploaded synced on github. [Click here...](https://github.com/Rezaul33/Exploratory-Data-analysis-on-California-Housing-Price) to view.
+
+
